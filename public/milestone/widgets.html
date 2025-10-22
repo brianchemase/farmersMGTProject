@@ -1,0 +1,1024 @@
+<!doctype html>
+<html lang="en">
+	
+<!-- Mirrored from bootstrap.gallery/milestone/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Nov 2018 12:59:50 GMT -->
+<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="Milestone Admin Template" />
+		<meta name="keywords" content="Admin, Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Admin Template, Best Admin Template, Bootstrap Template, Wrapbootstrap" />
+		<meta name="author" content="Bootstrap Gallery" />
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<title>Milestone Admin Dashboard</title>
+
+		<!--
+			**********************
+			**********************
+			Common CSS files
+			**********************
+			**********************
+		-->
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+		<!-- Icomoon Icons CSS -->
+		<link rel="stylesheet" href="fonts/icomoon/icomoon.css" />
+
+		<!-- Master CSS -->
+		<link rel="stylesheet" href="css/main.css" />
+
+		<!-- Daterange CSS -->
+		<link rel="stylesheet" href="vendor/daterange/daterange.css" />
+
+	</head>
+	<body>
+
+		<!-- Loading starts -->
+		<div id="loading-wrapper">
+			<div id="loader">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+				<div class="line4"></div>
+				<div class="line5"></div>
+				<div class="line6"></div>
+			</div>
+		</div>
+		<!-- Loading ends -->
+
+		<!-- BEGIN .app-wrap -->
+		<div class="app-wrap">
+			
+			<!-- BEGIN .app-heading -->
+			<header class="app-header">
+				<div class="container-fluid">
+					<div class="row gutters">
+						<div class="col-xl-6 col-lg-7 col-md-7 col-sm-6 col-7">
+							
+							<!-- Toggle button start, Only visible when the screen size is less than 992px -->
+							<a class="hoverable-toggler" href="#" id="app-side-hoverable-toggler">
+								<i class="icon-menu5"></i>
+							</a>
+
+							<a href="#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler onoffcanvas-nav" aria-expanded="true">
+								<i class="icon-menu5"></i>
+							</a>
+							<!-- Toggle button end -->
+
+							<!-- Logo start -->
+							<a class="logo" href="index-2.html">
+								<img src="img/logo.png" alt="Logo" /> <strong>Milestone</strong>
+							</a>
+							<!-- Logo end -->
+
+						</div>
+
+						<div class="col-xl-6 col-lg-5 col-md-5 col-sm-6 col-5">
+							
+							<!-- Header actions start -->
+							<ul class="header-actions">
+								<li class="dropdown">
+									<a href="#" id="notifications" data-toggle="dropdown" aria-haspopup="true">
+										<i class="icon-notifications_none"></i>
+										<span class="count-label">7</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="notifications">
+										<ul class="imp-notify">
+											<li class="clearfix">
+												<div class="avatar">
+													<img src="img/user8.png" alt="avatar" />
+													<span class="notify-iocn icon-drafts text-danger"></span>
+												</div>
+												<div class="details">
+													<h6>Wilson</h6>
+													<p>The best Dashboard design I have seen ever.</p>
+												</div>
+											</li>
+											<li class="clearfix">
+												<div class="avatar">
+													<img src="img/user4.png" alt="avatar" />
+													<span class="notify-iocn icon-sphere text-info"></span>
+												</div>
+												<div class="details">
+													<h6>John Smith</h6>
+													<p>Jhonny sent you a message. Read now!</p>
+												</div>
+											</li>
+											<li class="clearfix">
+												<div class="avatar">
+													<img src="img/user2.png" alt="avatar" />
+													<span class="notify-iocn icon-cake2 text-danger"></span>
+												</div>
+												<div class="details">
+													<h6>Justin Mezzell</h6>
+													<p>Stella, Added you as a Friend. Accept it!</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" id="todos" data-toggle="dropdown" aria-haspopup="true">
+										<i class="icon-person_outline"></i>
+										<span class="count-label red">5</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="todos">
+										<ul class="stats-widget">
+											<li>
+												<h4>$8500</h4>
+												<p>Revenue <span>+18%</span></p>
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%">
+														<span class="sr-only">87% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<h4>4750</h4>
+												<p>Downloads <span>+56%</span></p>
+												<div class="progress">
+													<div class="progress-bar" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+														<span class="sr-only">65% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<h4>2500</h4>
+												<p>Uploads <span class="text-secondary">-3%</span></p>
+												<div class="progress">
+													<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
+														<span class="sr-only">42% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+										<span class="avatar">JD<span class="status online"></span></span>
+										<span class="user-name">Jeffrey David</span>
+										<i class="icon-chevron-small-down"></i>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userSettings">
+										<ul class="user-settings-list">
+											<li>
+												<a href="profile.html">
+													My Profile<span class="badge badge-danger">7</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">
+													Notifications<span class="badge badge-info">12</span>
+												</a>
+											</li>
+											<li>
+												<a href="#">Account Settings</a>
+											</li>
+											<li class="dropdown-divider"></li>
+											<li>
+												<a href="#">Logout</a>
+											</li>
+										</ul>
+									</div>
+								</li>
+							</ul>
+							<!-- Header actions end -->
+
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- END: .app-heading -->
+
+			<!-- BEGIN .app-container -->
+			<div class="app-container">
+
+				<!-- BEGIN .app-side -->
+				<aside class="app-side" id="app-side">
+
+					<!-- BEGIN .side-content -->
+					<div class="side-content">
+
+						<!-- User details start -->
+						<div class="user-details">
+							<img src="img/user.jpg" class="thumb" alt="Milestone Admin" />
+							<h5 class="username">Jeffrey David</h5>
+							<h6 class="email">jeffrey-david@mail.com</h6>
+						</div>
+						<!-- User details end -->
+
+						<!-- BEGIN .user actions -->
+						<ul class="user-actions">
+							<li>
+								<a href="#">
+									<i class="icon-social-skype"></i>
+									<span class="count-label blue"></span>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="icon-social-twitter"></i>
+								</a>
+							</li>
+							<li>
+								<a href="#">
+									<i class="icon-export"></i>
+								</a>
+							</li>
+						</ul>
+						<!-- END .user actions -->
+
+						<!-- Custom search start -->
+						<div class="form-group custom-search">
+							<input type="text" class="form-control search-query" placeholder="Search for...">
+							<button class="btn" type="button">
+								<i class="icon-magnifying-glass"></i>
+							</button>
+						</div>
+						<!-- Custom search end -->
+
+
+						<!-- Start adding scrollbar to sidebar -->
+						<div class="sidebarNavScroll">
+							
+							<!-- BEGIN .side-nav -->
+							<nav class="side-nav">
+								
+								<!-- BEGIN: side-nav-content -->
+								<ul class="customSidebarMenu" id="customSidebarMenu">
+									<li>
+										<a href="index-2.html">
+											<span class="has-icon">
+												<i class="icon-av_timer"></i>
+											</span>
+											<span class="nav-title">Dashboard</span>
+										</a>
+									</li>
+									<li class="selected">
+										<a href="widgets.html">
+											<span class="has-icon">
+												<i class="icon-ac_unit"></i>
+											</span>
+											<span class="nav-title">Widgets</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-center_focus_strong"></i>
+											</span>
+											<span class="nav-title">Forms</span>
+											<span class="lbl">12</span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href="bs-select.html">BS Select</a>
+											</li>
+											<li>
+												<a href="range-sliders.html">Range Sliders</a>
+											</li>
+											<li>
+												<a href="form-inputs.html">Form Inputs</a>
+											</li>
+											<li>
+												<a href="input-groups.html">Inputs Groups</a>
+											</li>
+											<li>
+												<a href="checkbox-radio.html">Checkbox &amp; Radio</a>
+											</li>
+											<li>
+												<a href="contact.html">Contact Form</a>
+											</li>
+											<li>
+												<a href="contact2.html">Contact Form #2</a>
+											</li>
+											<li>
+												<a href="contact3.html">Contact Form #3</a>
+											</li>
+											<li>
+												<a href="contact4.html">Contact Form #4</a>
+											</li>
+											<li>
+												<a href="subscribe-form.html">Subscribe Form</a>
+											</li>
+											<li>
+												<a href="checkout-form.html">Checkout Form</a>
+											</li>
+											<li>
+												<a href="summernote-editor.html">Editor</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="custom-tables.html">
+											<span class="has-icon">
+												<i class="icon-nfc"></i>
+											</span>
+											<span class="nav-title">Custom Tables</span>
+										</a>
+									</li>
+									<li>
+										<a href="tables.html">
+											<span class="has-icon">
+												<i class="icon-border_outer"></i>
+											</span>
+											<span class="nav-title">Tables</span>
+										</a>
+									</li>
+									<li>
+										<a href="datatables.html">
+											<span class="has-icon">
+												<i class="icon-pages"></i>
+											</span>
+											<span class="nav-title">Data Tables</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-opacity"></i>
+											</span>
+											<span class="nav-title">UI Elements</span>
+											<span class="lbl red">15</span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href="general-elements.html">General Elements</a>
+											</li>
+											<li>
+												<a href="buttons.html">Buttons</a>
+											</li>
+											<li>
+												<a href="button-groups.html">Button Groups</a>
+											</li>
+											<li>
+												<a href="tabs.html">Tabs</a>
+											</li>
+											<li>
+												<a href="accordion.html">Accordion</a>
+											</li>
+											<li>
+												<a href="labels-badges.html">Labels &amp; Badges</a>
+											</li>
+											<li>
+												<a href="notifications.html">Notifications</a>
+											</li>
+											<li>
+												<a href="list-items.html">List Items</a>
+											</li>
+											<li>
+												<a href="navbars.html">Navbars</a>
+											</li>
+											<li>
+												<a href="popovers-tooltips.html">Popovers &amp; Tooltips</a>
+											</li>
+											<li>
+												<a href="progress.html">Progress Bars</a>
+											</li>
+											<li>
+												<a href="pagination.html">Pagination</a>
+											</li>
+											<li>
+												<a href="media-objects.html">Media Objects</a>
+											</li>
+											<li>
+												<a href="carousel.html">Carousels</a>
+											</li>
+											<li>
+												<a href="modals.html">Modals</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="cards.html">
+											<span class="has-icon">
+												<i class="icon-style"></i>
+											</span>
+											<span class="nav-title">Cards</span>
+										</a>
+									</li>	
+									<li>
+										<a href="typography.html">
+											<span class="has-icon">
+												<i class="icon-text_fields"></i>
+											</span>
+											<span class="nav-title">Typography</span>
+										</a>
+									</li>
+									<li>
+										<a href="calendar.html">
+											<span class="has-icon">
+												<i class="icon-event_note"></i>
+											</span>
+											<span class="nav-title">Calendar</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-chart-area-outline"></i>
+											</span>
+											<span class="nav-title">Graphs</span>
+											<span class="lbl">3</span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='c3-graphs.html'>C3 Graphs</a>
+											</li>
+											<li>
+												<a href='flot.html'>Flot Graphs</a>
+											</li>
+											<li>
+												<a href='morris.html'>Morris Graphs</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="contacts.html">
+											<span class="has-icon">
+												<i class="icon-people"></i>
+											</span>
+											<span class="nav-title">Contacts</span>
+										</a>
+									</li>
+									<li>
+										<a href="invoice.html">
+											<span class="has-icon">
+												<i class="icon-receipt"></i>
+											</span>
+											<span class="nav-title">Invoice</span>
+										</a>
+									</li>
+									<li>
+										<a href="pricing.html">
+											<span class="has-icon">
+												<i class="icon-verified_user"></i>
+											</span>
+											<span class="nav-title">Pricing</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-business_center"></i>
+											</span>
+											<span class="nav-title">Pages</span>
+											<span class="lbl red">5</span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='layout.html'>Layout</a>
+											</li>
+											<li>
+												<a href='profile.html'>Profile</a>
+											</li>
+											<li>
+												<a href='blog.html'>Blog</a>
+											</li>
+											<li>
+												<a href='timeline.html'>Timeline</a>
+											</li>
+											<li>
+												<a href="faq.html">Faq's</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-public"></i>
+											</span>
+											<span class="nav-title">Maps</span>
+											<span class="lbl">2</span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='google-maps.html'>Google Maps</a>
+											</li>
+											<li>
+												<a href='vector-maps.html'>Vector Maps</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="icons.html">
+											<span class="has-icon">
+												<i class="icon-layers"></i>
+											</span>
+											<span class="nav-title">Icons</span>
+										</a>
+									</li>
+									<li>
+										<a href="gallery.html">
+											<span class="has-icon">
+												<i class="icon-camera3"></i>
+											</span>
+											<span class="nav-title">Gallery</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-lock_outline"></i>
+											</span>
+											<span class="nav-title">Authentication</span>
+											<span class="lbl red">6</span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href="login.html">Login</a>
+											</li>
+											<li>
+												<a href="signup.html">Signup</a>
+											</li>
+											<li>
+												<a href="error404.html">Error 404</a>
+											</li>
+											<li>
+												<a href="error505.html">Error 505</a>
+											</li>
+											<li>
+												<a href="forgot-pwd.html">Forgot Password</a>
+											</li>
+											<li>
+												<a href="locked-screen.html">Locked Screen</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<!-- END: side-nav-content -->
+
+							</nav>
+							<!-- END: .side-nav -->
+
+						</div>
+						<!-- End adding scrollbar to sidebar -->
+
+					</div>
+					<!-- END: .side-content -->
+
+				</aside>
+				<!-- END: .app-side -->
+
+				<!-- BEGIN .app-main -->
+				<div class="app-main">
+
+					<!-- BEGIN .main-heading -->
+					<header class="main-heading">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xl-8 col-lg-8 col-md-6 col-sm-6">
+									<ol class="breadcrumb">
+										<li class="breadcrumb-item home">
+											<a href="index-2.html">
+												<i class="icon-home"></i>
+											</a>
+										</li>
+										<li class="breadcrumb-item active" aria-current="page">Widgets</li>
+									</ol>
+								</div>
+								<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+									<div class="daterange-container">
+										<div id="reportrange" class="form-control">
+											<span></span> <i class="icon-chevron-down down-arrow"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</header>
+					<!-- END: .main-heading -->
+
+					<!-- BEGIN .main-content -->
+					<div class="main-content">
+						
+
+						<!-- Row start -->
+						<div class="row gutters">
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+								<div class="simple-widget plain">
+									<div class="growth">
+										<i class="icon-timeline"></i>
+									</div>
+									<h2>$9,500</h2>
+									<p class="text-danger">Sales</p>
+									<div class="progress sm">
+										<div class="progress-bar bg-danger" role="progressbar" style="width: 37%;" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+								<div class="simple-widget plain">
+									<div class="growth blue">
+										<i class="icon-multiline_chart"></i>
+									</div>
+									<h2>$5,250</h2>
+									<p class="text-info">Expenses</p>
+									<div class="progress sm">
+										<div class="progress-bar bg-info" role="progressbar" style="width: 45%;" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>								
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+								<div class="simple-widget plain">
+									<div class="growth green">
+										<i class="icon-language"></i>
+									</div>
+									<h2>8,450</h2>
+									<p class="text-success">Visits</p>
+									<div class="progress sm">
+										<div class="progress-bar bg-success" role="progressbar" style="width: 59%;" aria-valuenow="59" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-6 col-12">
+								<div class="simple-widget plain">
+									<div class="growth yellow">
+										<i class="icon-shopping_cart"></i>
+									</div>
+									<h2>250k</h2>
+									<p class="text-warning">Orders</p>
+									<div class="progress sm">
+										<div class="progress-bar bg-warning" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+
+						<!-- Row start -->
+						<div class="row gutters">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+								<div class="card">
+									<div class="card-header">Todos</div>
+									<div class="customScroll">
+										<div class="card-body">
+											<ul class="task-list">
+												<li class="list completed">
+													<span></span>
+													<div class="task-details">
+														<p class="date">
+															<small class="text-secondary">Upgrade</small> - Late 3 days
+														</p>
+														<p>Web server hardware needs to be upgraded</p>
+														<small>Scheduled for 24th Mar, 2017</small>
+													</div>
+												</li>
+												<li class="list">
+													<span></span>
+													<div class="task-details">
+														<p class="date">
+															<small class="text-success">Bills</small> - Pay in 3 days
+														</p>
+														<p>Prepare for bi-weekly meeting to discuss new features</p>
+														<small>Scheduled for 20th Mar, 2017</small>
+													</div>
+												</li>
+												<li class="list completed">
+													<span></span>
+													<div class="task-details">
+														<p class="date">
+															<small class="text-secondary">Meeting</small> - Upcoming in 5 days
+														</p>
+														<p>Meeting with Sara in the Caffee Caldo for Brunch</p>
+														<small>Scheduled for 16th Mar, 2017</small>
+													</div>
+												</li>
+												<li class="list">
+													<span></span>
+													<div class="task-details">
+														<p class="date">
+															<small class="text-secondary">Meeting</small> - Upcoming in 5 days
+														</p>
+														<p>Meeting with Sara in the Caffee Caldo for Brunch</p>
+														<small>Scheduled for 16th Mar, 2017</small>
+													</div>
+												</li>
+												<li class="list">
+													<span></span>
+													<div class="task-details">
+														<p class="date">
+															<small class="text-primary">Meeting</small> - Delay 7 days
+														</p>
+														<p>Technical management meeting</p>
+														<small>Completed 15 days ago</small>
+													</div>
+												</li>
+												<li class="list completed">
+													<span></span>
+													<div class="task-details">
+														<p class="date">
+															<small>Transfer</small> - Completed
+														</p>
+														<p>Transfer all domain names as soon as possible!</p>
+														<small>Completed 2 days ago</small>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+								<div class="card">
+									<div class="card-header">Messages</div>
+									<div class="customScroll">
+										<div class="card-body">
+											<ul class="message-wrapper">
+												<li class="in">
+													<div class="empty-avatar green">AS</div>
+													<div class="message">
+														<a href="#" class="name">Elon Musk</a>
+														<span class="date-time">Jan 18th, 2017</span>
+														<div class="body">
+															Convergence target enable syndicate <span>grow</span> end-to-end life-hacks, integrate engage <span>podcasting</span>."
+														</div>
+													</div>
+												</li>
+												<li class="out">
+													<div class="empty-avatar">AS</div>
+													<div class="message">
+														<a href="#" class="name">Angela Serkel</a>
+														<span class="date-time">Jan 15th, 2017</span>
+														<div class="body">
+															Transition, <span>widgets</span> users remix dynamic 24/365 holistic network effects <span>communities</span>, users, leading-edge end-to-end life-hacks e-services social."
+														</div>
+													</div>
+												</li>
+												<li class="in">
+													<div class="empty-avatar red">NT</div>
+													<div class="message">
+														<a href="#" class="name">Nkio Toyoda</a>
+														<span class="date-time">Jan 10th, 2017</span>
+														<div class="body">
+															Need some <span>interesting looking</span> for your work in progress end-to-end life-hacks, integrate engage <span>podcasting.</span>
+														</div>
+													</div>
+												</li>
+												<li class="out">
+													<div class="empty-avatar yellow">AS</div>
+													<div class="message">
+														<a href="#" class="name">Angela Serkel</a>
+														<span class="date-time">Jan 15th, 2017</span>
+														<div class="body">
+															Transition, <span>widgets</span> users remix dynamic 24/365 holistic network effects <span>communities</span>, users, leading-edge end-to-end life-hacks e-services social."
+														</div>
+													</div>
+												</li>
+												<li class="in">
+													<div class="empty-avatar red">NT</div>
+													<div class="message">
+														<a href="#" class="name">Nkio Toyoda</a>
+														<span class="date-time">Jan 10th, 2017</span>
+														<div class="body">
+															Need some <span>interesting looking</span> for your work in progress end-to-end life-hacks, integrate engage <span>podcasting.</span>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+								<div class="card">
+									<div class="card-header">Chat</div>
+									<div class="toggle-switch tr">
+										<input type="checkbox" class="check" />
+										<b class="b switch"></b>
+										<b class="b track"></b>
+									</div>
+									<div class="customScroll">
+										<div class="card-body">
+											<ul class="chats">
+												<li class="chats-left">
+													<div class="chats-avatar">
+														<img src="img/user2.png" alt="Unify Admin">
+														<div class="chats-name">Wincy</div>
+													</div>
+													<div class="chats-text info">Hello, I'm Wincy.<br>How can I help you today?</div>
+													<div class="chats-hour">08:55 <span class="icon-done_all"></span></div>
+												</li>
+												<li class="chats-right">
+													<div class="chats-avatar">
+														<img src="img/user6.png" alt="Unify Admin">
+														<div class="chats-name">You</div>
+													</div>
+													<div class="chats-text danger">Hi, Wincy. I need more information about Developer Plan.</div>
+													<div class="chats-hour">08:56 <span class="icon-done_all"></span></div>
+												</li>
+										
+												<li class="chats-left">
+													<div class="chats-avatar">
+														<img src="img/user2.png" alt="Unify Admin">
+														<div class="chats-name">Wincy</div>
+													</div>
+													<div class="chats-text warning">Are we meeting today? Project has been already finished and I have results to show you.</div>
+													<div class="chats-hour">08:57 <span class="icon-done_all"></span></div>
+												</li>
+										
+												<li class="chats-right">
+													<div class="chats-avatar">
+														<img src="img/user6.png" alt="Unify Admin">
+														<div class="chats-name">You</div>
+													</div>
+													<div class="chats-text success">Well I am not sure. The rest of the team is not here yet. Maybe in an hour or so?</div>
+													<div class="chats-hour">08:59 <span class="icon-done_all"></span></div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card-header">Notifications</div>
+									<div class="customScroll">
+										<div class="card-body">
+											<ul class="stats">
+												<li>
+													<span class="icon">
+														<i class="icon-shopping-basket"></i>
+													</span>
+													Once a buyer completes checkout.
+												</li>
+												<li>
+													<span class="icon red">
+														<i class="icon-fire"></i>
+													</span>
+													A new ticket opened.
+												</li>
+												<li>
+													<span class="icon yellow">
+														<i class="icon-camera"></i>
+													</span>
+													Thanks Sarah, I need your profile.
+												</li>
+												<li>
+													<span class="icon green">
+														<i class="icon-lightbulb"></i>
+													</span>
+													Major Release Reminders.
+												</li>
+												<li>
+													<span class="icon">
+														<i class="icon-emoji-happy"></i>
+													</span>
+													End-of-Support Notifications.
+												</li>
+												<li>
+													<span class="icon red">
+														<i class="icon-fire"></i>
+													</span>
+													New notification received.
+												</li>
+												<li>
+													<span class="icon green">
+														<i class="icon-camera"></i>
+													</span>
+													Thanks Shawn, I need your profile.
+												</li>
+												<li>
+													<span class="icon yellow">
+														<i class="icon-lightbulb"></i>
+													</span>
+													That's A great idea!
+												</li>
+												<li>
+													<span class="icon">
+														<i class="icon-emoji-happy"></i>
+													</span>
+													Tell us what you think!
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row ends -->
+
+						<!-- Row start -->
+						<div class="row gutters">
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+								<div class="stats-graph-widget">
+									<div class="row gutters">
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+											<h6>Sessions</h6>
+											<div class="stats-graph">
+												<span class="line-one">13,21,8,12,10,5,18,4,26,3,9,3,5,2</span>
+											</div>
+										</div>
+										<div class="col-xl-6 col-md-6 col-sm-6 col-xs-6">
+											<h2>8,000</h2>
+											<p class="growth">
+												19.2%<i class="icon-call_received down"></i>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
+								<div class="stats-graph-widget">
+									<div class="row gutters">
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+											<h6>Pageviews</h6>
+											<div class="stats-graph">
+												<span class="line-two">18,8,0,6,17,9,7,3,5,22,5,16,9,3,19,2</span>
+											</div>
+										</div>
+										<div class="col-xl-6 col-md-6 col-sm-6 col-xs-6">
+											<h2>4,500</h2>
+											<p class="growth">
+												2.9%<i class="icon-call_made up"></i>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+								<div class="stats-graph-widget">
+									<div class="row gutters">
+										<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+											<h6>Goals</h6>
+											<div class="stats-graph">
+												<span class="line-three">2,16,9,11,2,2,5,7,3,5,9,3,5,2,12</span>
+											</div>
+										</div>
+										<div class="col-xl-6 col-md-6 col-sm-6 col-xs-6">
+											<h2>1,100</h2>
+											<p class="growth">
+												2.10%<i class="icon-call_made up"></i>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+
+					</div>
+					<!-- END: .main-content -->
+
+					<!-- BEGIN .main-footer -->
+					<footer class="main-footer fixed-btm">
+						Copyright Milestone Admin 2018.
+					</footer>
+					<!-- END: .main-footer -->
+
+				</div>
+				<!-- END: .app-main -->
+
+			</div>
+			<!-- END: .app-container -->
+			
+		</div>
+		<!-- END: .app-wrap -->
+
+		<!--
+			**********************
+			**********************
+			Common JS files
+			**********************
+			**********************
+		-->
+
+		<!-- jQuery first, then Tether, then other JS. -->
+		<script src="js/jquery.js"></script>
+
+		<script src="js/tether.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="vendor/MilestoneNav/MilestoneNav.js"></script>
+		<script src="vendor/onoffcanvas/onoffcanvas.js"></script>
+		<script src="js/moment.js"></script>
+
+		<!-- Daterange JS -->
+		<script src="vendor/daterange/daterange.js"></script>
+		<script src="vendor/daterange/custom-daterange.js"></script>
+
+		<!-- Slimscroll JS -->
+		<script src="vendor/slimscroll/slimscroll.min.js"></script>
+		<script src="vendor/slimscroll/custom-scrollbar.js"></script>
+
+
+		<!--
+			**********************
+			**********************
+			Optional JS files - Plugns
+			**********************
+			**********************
+		-->
+
+		<!-- Peity JS -->
+		<script src="vendor/peity/peity.min.js"></script>
+		<script src="vendor/peity/custom-peity.js"></script>
+
+		<!-- Common JS -->
+		<script src="js/common.js"></script>
+
+	</body>
+
+<!-- Mirrored from bootstrap.gallery/milestone/widgets.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Nov 2018 12:59:52 GMT -->
+</html>
