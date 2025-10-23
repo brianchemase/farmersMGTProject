@@ -31,7 +31,7 @@
 										</a>
 									</li> -->
 
-                                    <li class="{{ request()->is('dashboard') ? 'selected' : '' }}">
+                                    <li class="{{ Route::currentRouteName() == 'dashboard' ? 'selected' : '' }}">
                                         <a href="{{ route('dashboard') }}">
                                             <span class="has-icon">
                                                 <i class="icon-av_timer"></i>
@@ -42,8 +42,8 @@
 
 
                                                                        
-									<li>
-										<a href="#">
+								 <li class="{{ Route::currentRouteName() == 'getAllFarmers' ? 'selected' : '' }}">
+                                        <a href="{{ route('getAllFarmers') }}">
 											<span class="has-icon">
 												<i class="icon-people"></i>
 											</span>

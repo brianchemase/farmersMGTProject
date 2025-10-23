@@ -15,7 +15,7 @@
 							<!-- Toggle button end -->
 
 							<!-- Logo start -->
-							<a class="logo" href="index-2.html">
+							<a class="logo" href="{{ route('dashboard') }}">
 								<img src="{{asset('dash/img/logo.png') }}" alt="Logo" /> <strong>Mannatech Farm Management System</strong>
 							</a>
 							<!-- Logo end -->

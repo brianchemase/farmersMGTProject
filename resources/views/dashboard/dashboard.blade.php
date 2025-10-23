@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="app-main">
+				<div class="app-main">
 
 					<!-- BEGIN .main-heading -->
 					<header class="main-heading">

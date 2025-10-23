@@ -12,7 +12,8 @@ class FarmerController extends Controller
 
     public function getAllFarmers()
     {
-        $contributions = DB::table('farmers')->orderBy('created_at', 'desc')->get();
+       // $contributions = DB::table('farmers')->orderBy('created_at', 'desc')->get();
+        $contributions=" data";
 
         $data = [
             'contributions' => $contributions,

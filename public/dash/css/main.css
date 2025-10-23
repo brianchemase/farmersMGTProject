@@ -169,7 +169,7 @@ a {
   color: #000000;
   text-decoration: none; }
   a:hover {
-    color: #438bec;
+    color: #008000;
     text-decoration: none; }
   a:focus {
     outline: none;
@@ -230,7 +230,7 @@ hr {
 
 /************* 3 C. Background Colors **************/
 .bg-primary {
-  background-color: #5a99ee !important;
+  background-color: #008000 !important;
   color: #ffffff; }
 
 .bg-secondary {
@@ -242,7 +242,7 @@ hr {
   color: #ffffff; }
 
 .bg-info {
-  background-color: #5a99ee !important;
+  background-color: #008000 !important;
   color: #ffffff; }
 
 .bg-warning {
@@ -473,7 +473,7 @@ h5.custom {
     .main-heading .breadcrumb .breadcrumb-item {
       line-height: 30px; }
       .main-heading .breadcrumb .breadcrumb-item.home {
-        background: #5a99ee;
+        background: #008000;
         -webkit-border-radius: 50px;
         -moz-border-radius: 50px;
         border-radius: 50px;
@@ -489,7 +489,7 @@ h5.custom {
         padding: 0;
         line-height: 30px;
         font-size: .9rem;
-        color: #5a99ee; }
+        color: #008000; }
       .main-heading .breadcrumb .breadcrumb-item.active {
         color: #8796af; }
 

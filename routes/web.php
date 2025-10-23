@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FarmerController;
 
 
 /*
@@ -28,11 +29,12 @@ Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 
 Route::prefix('farmers')->group(function () {
-    Route::post('register', [FarmerController::class, 'register']);
-    Route::get('{id}', [FarmerController::class, 'show']);
-    Route::put('{id}', [FarmerController::class, 'update']);
-    Route::get('search', [FarmerController::class, 'search']);
-    Route::post('{id}/feedback', [FarmerController::class, 'submitFeedback']);
+    Route::get('records', [FarmerController::class, 'getAllFarmers'])->name('getAllFarmers');// all farmers
+    // Route::post('register', [FarmerController::class, 'register'])->name('register');
+    // Route::get('{id}', [FarmerController::class, 'show'])->name('showfarmer');
+    // Route::put('{id}', [FarmerController::class, 'update'])->name('update.farmer');
+    // Route::get('search', [FarmerController::class, 'search'])->name('search.farmer');
+    // Route::post('{id}/feedback', [FarmerController::class, 'submitFeedback'])->name('submitFeedback');
 });
 
 

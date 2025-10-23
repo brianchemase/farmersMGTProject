@@ -41,6 +41,10 @@
         <!-- Datepickers CSS -->
         <link rel="stylesheet" href="{{ asset('dash/css/jquery-ui.css') }}">
         <link rel="stylesheet" href="{{ asset('dash/css/datepicker.css') }}">
+
+		<!-- Data Tables -->
+		<link rel="stylesheet" href="{{ asset('dash/vendor/datatables/dataTables.bs4.css') }}" />
+		<link rel="stylesheet" href="{{ asset('dash/vendor/datatables/dataTables.bs4-custom.css') }}" />
 	
 
 	</head>
@@ -49,6 +53,8 @@
 		<!-- Loading starts -->
 		<div id="loading-wrapper">
 			<div id="loader">
+
+			<img src="{{ asset('dash/img/logo.png') }}" alt="Logo" class="loader-logo">
 				<div class="line1"></div>
 				<div class="line2"></div>
 				<div class="line3"></div>
@@ -131,6 +137,14 @@
             <script src="{{ asset('dash/vendor/jvectormap/jquery-jvectormap-2.0.3.min.js') }}"></script>
             <script src="{{ asset('dash/vendor/jvectormap/usa.js') }}"></script>
             <script src="{{ asset('dash/vendor/jvectormap/custom/map-usa1.js') }}"></script>
+
+			<!-- Data Tables -->
+			<script src="{{ asset('dash/vendor/datatables/dataTables.min.js') }}"></script>
+			<script src="{{ asset('dash/vendor/datatables/dataTables.bootstrap.min.js') }}"></script>
+			
+			<!-- Custom Data tables -->
+			<script src="{{ asset('dash/vendor/datatables/custom/custom-datatables.js') }}"></script>
+			<script src="{{ asset('dash/vendor/datatables/custom/fixedHeader.js') }}"></script>
 
             <!-- Common JS -->
             <script src="{{ asset('dash/js/common.js') }}"></script>
