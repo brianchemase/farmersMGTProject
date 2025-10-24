@@ -14,11 +14,11 @@
 								<div class="col-xl-8 col-lg-8 col-md-6 col-sm-6">
 									<ol class="breadcrumb">
 										<li class="breadcrumb-item home">
-											<a href="index-2.html">
+											<a href="#">
 												<i class="icon-home"></i>
 											</a>
 										</li>
-										<li class="breadcrumb-item active" aria-current="page">Data Tables</li>
+										<li class="breadcrumb-item active" aria-current="page">Farmers List</li>
 									</ol>
 								</div>
 								<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
@@ -36,6 +36,23 @@
 
 					<!-- BEGIN .main-content -->
 					<div class="main-content">
+
+
+						<!-- Row start -->
+						<div class="row gutters">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+								<div class="card">
+									<div class="card-header">Register a New Farmer</div>
+									<div class="card-body">
+										<!-- <h4 class="card-title">Special title treatment</h4> -->
+										<p class="card-text">Click the button below to register a new farmer into the farmers database.</p>
+										<a href="{{ route('registerfarmer') }}" class="btn btn-primary">Register New Farmer</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Row end -->
+
 
 						<!-- Row start -->
 						<div class="row gutters">

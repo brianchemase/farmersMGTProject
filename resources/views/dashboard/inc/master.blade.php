@@ -45,6 +45,14 @@
 		<!-- Data Tables -->
 		<link rel="stylesheet" href="{{ asset('dash/vendor/datatables/dataTables.bs4.css') }}" />
 		<link rel="stylesheet" href="{{ asset('dash/vendor/datatables/dataTables.bs4-custom.css') }}" />
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.js"
+			integrity="sha512-bYkaBWaFtfPIMYt9+CX/4DWgfrjcHinjerNYxQmQx1VM76eUsPPKZa5zWV8KksVkBF/DaHSADCwil2J5Uq2ctA=="
+			crossorigin="anonymous"></script>
+
+		<!-- Your custom JS -->
+    	<script src="{{ asset('dash/js/pinchecker.js') }}"></script>      
 	
 
 	</head>

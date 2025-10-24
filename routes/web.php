@@ -30,7 +30,10 @@ Route::get('/', [DashboardController::class, 'dashboard'])->name('dashboard');
 
 Route::prefix('farmers')->group(function () {
     Route::get('records', [FarmerController::class, 'getAllFarmers'])->name('getAllFarmers');// all farmers
-    // Route::post('register', [FarmerController::class, 'register'])->name('register');
+    Route::get('register', [FarmerController::class, 'farmersregister'])->name('registerfarmer');
+    Route::post('savefarmer', [FarmerController::class, 'savefarmer'])->name('farmers.store');
+    Route::get('/{id}/edit', [FarmerController::class, 'editfarmer'])->name('farmers.edit');
+    Route::put('/{id}', [FarmerController::class, 'updatefarmer'])->name('farmers.update');
     // Route::get('{id}', [FarmerController::class, 'show'])->name('showfarmer');
     // Route::put('{id}', [FarmerController::class, 'update'])->name('update.farmer');
     // Route::get('search', [FarmerController::class, 'search'])->name('search.farmer');
