@@ -12,11 +12,12 @@ class FarmerController extends Controller
 
     public function getAllFarmers()
     {
-       // $contributions = DB::table('farmers')->orderBy('created_at', 'desc')->get();
+        $farmers = DB::table('farmers')->orderBy('created_at', 'desc')->get();
         $contributions=" data";
 
         $data = [
             'contributions' => $contributions,
+            'farmers' => $farmers,
         ];
 
         return view('dashboard.farmer_table')->with($data);
@@ -175,7 +176,7 @@ class FarmerController extends Controller
             '047' => 'Nairobi City',
         ];
 
-        return view('farmers.edit', compact('farmer', 'counties'));
+        return view('dashboard.farmerRegistrationUpdate', compact('farmer', 'counties'));
     }
 
 

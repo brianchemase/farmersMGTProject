@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('county');
             $table->string('primary_phone');
             $table->string('secondary_phone')->nullable();
+             $table->string('ppt')->nullable();
             $table->timestamps();
         });
     }

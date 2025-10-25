@@ -38,6 +38,9 @@
         <link rel="stylesheet" href="{{ asset('dash/vendor/morris/morris.css') }}">
         <link rel="stylesheet" href="{{ asset('dash/vendor/circliful/circliful.css') }}">
 
+		<!-- Notify -->
+		<link rel="stylesheet" href="{{ asset('dash/vendor/notify/notify-flat.css') }}" />
+
         <!-- Datepickers CSS -->
         <link rel="stylesheet" href="{{ asset('dash/css/jquery-ui.css') }}">
         <link rel="stylesheet" href="{{ asset('dash/css/datepicker.css') }}">
@@ -52,7 +55,8 @@
 			crossorigin="anonymous"></script>
 
 		<!-- Your custom JS -->
-    	<script src="{{ asset('dash/js/pinchecker.js') }}"></script>      
+    	<script src="{{ asset('dash/js/pinchecker.js') }}"></script> 
+		     
 	
 
 	</head>
@@ -153,9 +157,16 @@
 			<!-- Custom Data tables -->
 			<script src="{{ asset('dash/vendor/datatables/custom/custom-datatables.js') }}"></script>
 			<script src="{{ asset('dash/vendor/datatables/custom/fixedHeader.js') }}"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 
             <!-- Common JS -->
             <script src="{{ asset('dash/js/common.js') }}"></script>
+
+				<!-- Notify Js -->
+				<script src="{{ asset('dash/js/jquery.easing.1.3.js') }}"></script>
+				<script src="{{ asset('dash/vendor/notify/notify.js') }}"></script>
+				<script src="{{ asset('dash/vendor/notify/notify-custom.js') }}"></script>
 
 
 		<script type="text/javascript">

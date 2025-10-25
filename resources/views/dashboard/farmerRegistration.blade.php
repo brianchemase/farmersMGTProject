@@ -41,7 +41,7 @@
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <div id="formprocessing" class="text-primary mt-2 mb-2 fw-semibold"></div>
                                     <div id="error" class="text-danger mt-1"></div>
-                                        <form action="{{ route('farmers.store') }}" method="POST">
+                                        <form action="{{ route('farmers.store') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-block">
                                                 <div class="form-block-header">
@@ -50,61 +50,156 @@
 
                                                 <div class="form-block-body">
                                                     <div class="row gutters">
-                                                        <!-- Left Column -->
-                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                            
-                                                            <div class="form-group">
-                                                                <label for="id_number" class="col-form-label">Farmer National ID</label>
-                                                                <input type="text" name="id_number" class="form-control" id="id_number" placeholder="National ID" required>
+                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+                                                            <div class="row gutters">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="id_number" class="col-form-label">Farmer National ID</label>
+                                                                        <input type="text" 
+                                                                            name="id_number" 
+                                                                            class="form-control @error('id_number') is-invalid @enderror" 
+                                                                            id="id_number" 
+                                                                            placeholder="National ID" 
+                                                                            value="{{ old('id_number') }}" 
+                                                                            required>
+                                                                        @error('id_number')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="name" class="col-form-label">Farmer Name</label>
+                                                                        <input type="text" 
+                                                                            name="name" 
+                                                                            class="form-control @error('name') is-invalid @enderror" 
+                                                                            id="farmername" 
+                                                                            placeholder="Full Name" 
+                                                                            value="{{ old('name') }}" 
+                                                                            required>
+                                                                        @error('name')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <label for="name" class="col-form-label">Farmer Name</label>
-                                                                <input type="text" name="name" class="form-control" id="farmername" placeholder="Full Name" required>
-                                                            </div>
+                                                            <div class="row gutters">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="gender" class="col-form-label">Gender</label>
+                                                                        <select name="gender" id="gender" class="form-control @error('gender') is-invalid @enderror" required>
+                                                                            <option value="">-- Select Gender --</option>
+                                                                            <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
+                                                                            <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
+                                                                        </select>
+                                                                        @error('gender')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
 
-                                                            <div class="form-group">
-                                                                <label for="gender" class="col-form-label">Gender</label>
-                                                                <select name="gender" id="gender" class="form-control" required>
-                                                                    <option value="">-- Select Gender --</option>
-                                                                    <option value="Male">Male</option>
-                                                                    <option value="Female">Female</option>
-                                                                </select>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="location" class="col-form-label">Location</label>
-                                                                <input type="text" name="location" class="form-control" id="location" placeholder="Location" required>
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="location" class="col-form-label">Location</label>
+                                                                        <input type="text" 
+                                                                            name="location" 
+                                                                            class="form-control @error('location') is-invalid @enderror" 
+                                                                            id="location" 
+                                                                            placeholder="Location" 
+                                                                            value="{{ old('location') }}" 
+                                                                            required>
+                                                                        @error('location')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
                                                         </div>
 
-                                                        <!-- Right Column -->
-                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
 
-                                                            <div class="form-group">
-                                                                <label for="dateofbirth" class="col-form-label">Date of Birth</label>
-                                                                <input type="date" name="dateofbirth" class="form-control" id="dateofbirth" required>
+                                                            <div class="row gutters">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="dateofbirth" class="col-form-label">Date of Birth</label>
+                                                                        <input type="date" 
+                                                                            name="dateofbirth" 
+                                                                            class="form-control @error('dateofbirth') is-invalid @enderror" 
+                                                                            id="dateofbirth" 
+                                                                            value="{{ old('dateofbirth') }}" 
+                                                                            required>
+                                                                        @error('dateofbirth')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="county" class="col-form-label">County of Farming</label>
+                                                                        <select name="county" id="county" class="form-control @error('county') is-invalid @enderror" required>
+                                                                            <option value="">-- Select County --</option>
+                                                                            @foreach($counties as $code => $name)
+                                                                                <option value="{{ $code }} - {{ $name }}" 
+                                                                                    {{ old('county') == "$code - $name" ? 'selected' : '' }}>
+                                                                                    {{ $code }} - {{ $name }}
+                                                                                </option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                        @error('county')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
-                                                        <div class="form-group">
-                                                                <label for="county" class="col-form-label">County of Farming</label>
-                                                                <select name="county" id="county" class="form-control" required>
-                                                                    <option value="">-- Select County --</option>
-                                                                    @foreach($counties as $code => $name)
-                                                                        <option value="{{ $code }} - {{ $name }}">{{ $code }} - {{ $name }}</option>
-                                                                    @endforeach
-                                                                </select>
+                                                            <div class="row gutters">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="primary_phone" class="col-form-label">Primary Phone Number</label>
+                                                                        <input type="text" 
+                                                                            name="primary_phone" 
+                                                                            class="form-control @error('primary_phone') is-invalid @enderror" 
+                                                                            id="primary_phone" 
+                                                                            placeholder="07XXXXXXXX" 
+                                                                            value="{{ old('primary_phone') }}" 
+                                                                            required>
+                                                                        @error('primary_phone')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="secondary_phone" class="col-form-label">Secondary Phone Number</label>
+                                                                        <input type="text" 
+                                                                            name="secondary_phone" 
+                                                                            class="form-control @error('secondary_phone') is-invalid @enderror" 
+                                                                            id="secondary_phone" 
+                                                                            placeholder="07XXXXXXXX" 
+                                                                            value="{{ old('secondary_phone') }}">
+                                                                        @error('secondary_phone')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <label for="primary_phone" class="col-form-label">Primary Phone Number</label>
-                                                                <input type="text" name="primary_phone" class="form-control" id="primary_phone" placeholder="07XXXXXXXX" required>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label for="secondary_phone" class="col-form-label">Secondary Phone Number</label>
-                                                                <input type="text" name="secondary_phone" class="form-control" id="secondary_phone" placeholder="07XXXXXXXX">
+                                                            <div class="row gutters">
+                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                    <div class="form-group">
+                                                                        <label for="magshot" class="col-form-label">Farmer Magshot</label>
+                                                                        <input type="file" name="magshot" class="form-control @error('magshot') is-invalid @enderror" id="magshot">
+                                                                        @error('magshot')
+                                                                            <div class="text-danger small">{{ $message }}</div>
+                                                                        @enderror
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
                                                         </div>
@@ -112,26 +207,19 @@
 
                                                     <div class="row gutters mt-3">
                                                         <div class="col-xl-12">
-                                                            <button type="submit" class="btn btn-primary float-right"> <span class="icon-user-add"></span> Register Farmer</button>
+                                                            <button type="submit" class="btn btn-primary float-right">
+                                                                <span class="icon-user-add"></span> Register Farmer
+                                                            </button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </form>
+
+                                 
 								</div>
 							</div>
 
-                           
-
-							<!--*************************
-							*************************
-							*************************
-							 Contact Form End
-							*************************
-							*************************
-							*************************-->
-
-						
 					</div>
 					<!-- END: .main-content -->
 
