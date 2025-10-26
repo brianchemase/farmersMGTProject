@@ -24,9 +24,7 @@ class FarmerController extends Controller
     }
 
 
-
-
-     public function farmersregister()
+    public function farmersregister()
     {
           $contributions=" data";
 
@@ -101,7 +99,16 @@ class FarmerController extends Controller
             'county' => 'required|string|max:255',
             'primary_phone' => 'required|string|max:15',
             'secondary_phone' => 'nullable|string|max:15',
+            'magshot' => 'nullable|image|mimes:jpg,jpeg,png|max:2048', // allow up to 2MB
         ]);
+
+        $imagePath = null;
+
+        // Check if an image was uploaded
+        if ($request->hasFile('magshot')) {
+            // Store image in 'public/farmersppt' and get the path
+            $imagePath = $request->file('magshot')->store('farmersppt', 'public');
+        }
 
         DB::table('farmers')->insert([
             'id_number' => $validated['id_number'],
@@ -112,6 +119,7 @@ class FarmerController extends Controller
             'county' => $validated['county'],
             'primary_phone' => $validated['primary_phone'],
             'secondary_phone' => $validated['secondary_phone'] ?? null,
+            'ppt' => $imagePath, // save the image path
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -181,32 +189,61 @@ class FarmerController extends Controller
 
 
     public function updatefarmer(Request $request, $id)
-        {
-            $validated = $request->validate([
-                'id_number' => 'required|string|max:20',
-                'name' => 'required|string|max:255',
-                'gender' => 'required|string',
-                'location' => 'required|string|max:255',
-                'dateofbirth' => 'required|date',
-                'county' => 'required|string|max:255',
-                'primary_phone' => 'required|string|max:15',
-                'secondary_phone' => 'nullable|string|max:15',
-            ]);
+    {
+        $validated = $request->validate([
+            'id_number' => 'required|string|max:20',
+            'name' => 'required|string|max:255',
+            'gender' => 'required|string',
+            'location' => 'required|string|max:255',
+            'dateofbirth' => 'required|date',
+            'county' => 'required|string|max:255',
+            'primary_phone' => 'required|string|max:15',
+            'secondary_phone' => 'nullable|string|max:15',
+            'magshot' => 'nullable|image|mimes:jpg,jpeg,png|max:5048', // allow up to 5MB
+        ]);
 
-            DB::table('farmers')->where('id', $id)->update([
-                'id_number' => $validated['id_number'],
-                'name' => $validated['name'],
-                'gender' => $validated['gender'],
-                'location' => $validated['location'],
-                'dateofbirth' => $validated['dateofbirth'],
-                'county' => $validated['county'],
-                'primary_phone' => $validated['primary_phone'],
-                'secondary_phone' => $validated['secondary_phone'] ?? null,
-                'updated_at' => now(),
-            ]);
+        // Fetch the existing farmer record
+        $farmer = DB::table('farmers')->where('id', $id)->first();
 
-            return redirect()->route('farmers.edit', $id)->with('success', 'Farmer details updated successfully!');
+        $imagePath = $farmer->ppt; // keep old image path by default
+
+        // If a new image is uploaded
+        if ($request->hasFile('magshot')) {
+            // Delete the old image if it exists
+            if ($farmer->ppt && Storage::disk('public')->exists($farmer->ppt)) {
+                Storage::disk('public')->delete($farmer->ppt);
+            }
+
+            // Store new image
+            $imagePath = $request->file('magshot')->store('farmersppt', 'public');
         }
+
+        DB::table('farmers')->where('id', $id)->update([
+            'id_number' => $validated['id_number'],
+            'name' => $validated['name'],
+            'gender' => $validated['gender'],
+            'location' => $validated['location'],
+            'dateofbirth' => $validated['dateofbirth'],
+            'county' => $validated['county'],
+            'primary_phone' => $validated['primary_phone'],
+            'secondary_phone' => $validated['secondary_phone'] ?? null,
+            'ppt' => $imagePath, // update image path
+            'updated_at' => now(),
+        ]);
+
+        return redirect()->route('farmers.edit', $id)->with('success', 'Farmer details updated successfully!');
+    }
+
+    public function viewfarmer($id)
+    {
+        $farmer = DB::table('farmers')->where('id', $id)->first();
+
+        if (!$farmer) {
+            abort(404, 'Farmer not found.');
+        }
+
+        return view('dashboard.viewfarmerdetails', compact('farmer'));
+    }
 
 
 }

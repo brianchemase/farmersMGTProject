@@ -88,32 +88,31 @@
 														<td>{{ $farmer->county }}</td>
 														<td>{{ $farmer->primary_phone }}</td>
 														<td>{{ $farmer->secondary_phone ?? '-' }}</td>
-														<td>{{ $farmer->ppt ?? '-' }}</td>
 														<td>
-															<div class="dropdown">
-																<button class="btn btn-sm btn-primary dropdown-toggle" type="button" id="dropdownMenuButton{{ $farmer->id }}" data-bs-toggle="dropdown" aria-expanded="false">
-																	Actions
+															@if($farmer->ppt)
+																<a href="{{ asset('storage/' . $farmer->ppt) }}" target="_blank">View PPT</a>
+															@else
+																<span class="text-muted">N/A</span>
+															@endif
+														</td>
+														<td>
+															
+
+															<div class="btn-group dropleft">
+																<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+																	Action
 																</button>
-																<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton{{ $farmer->id }}">
-																	<li>
-																		<a class="dropdown-item" href="{{ route('farmers.edit', $farmer->id) }}">
-																			<i class="bi bi-pencil-square me-1"></i> Edit
-																		</a>
-																	</li>
-																	<li>
-																		<a class="dropdown-item text-info" href="#">
-																			<i class="bi bi-eye me-1"></i> View
-																		</a>
-																	</li>
-																	<li><hr class="dropdown-divider"></li>
-																	
-																</ul>
+																<div class="dropdown-menu" x-placement="left-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-194px, 0px, 0px);">
+																	<a class="dropdown-item" href="{{ route('farmers.edit', $farmer->id) }}">Edit Farmer</a>
+																	<a class="dropdown-item" href="{{ route('farmers.show', $farmer->id) }}">View Farmer</a>
+																	<a class="dropdown-item" href="#">Something else here</a>																	
+																</div>
 															</div>
 														</td>
 													</tr>
 												@empty
 													<tr>
-														<td colspan="10" class="text-center text-muted">No farmers found</td>
+														<td colspan="11" class="text-center text-muted">No farmers found</td>
 													</tr>
 												@endforelse
 											</tbody>

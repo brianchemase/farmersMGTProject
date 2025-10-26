@@ -9,10 +9,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 		<meta name="description" content="Farmers management system" />
-		<meta name="keywords" content="Admin, Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Admin Template, Best Admin Template, Bootstrap Template, Wrapbootstrap" />
-		<meta name="author" content="Bootstrap Gallery" />
-		<link rel="shortcut icon" href="asset('dash/img/favicon.ico') }}" />
-		<title>Dashboard</title>
+		<meta name="keywords" content="A farmers managment system" />
+		<meta name="author" content="Brian Anikayi" />
+		<link rel="shortcut icon" href="{{asset('dash/img/favicon.ico') }}" />
+		<title>Dashboard - Farmers MGT</title>
 		
 		<!--
 			**********************
