@@ -95,8 +95,7 @@
 																<span class="text-muted">N/A</span>
 															@endif
 														</td>
-														<td>
-															
+														<td>															
 
 															<div class="btn-group dropleft">
 																<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
