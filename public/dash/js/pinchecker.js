@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-const url = "https://transactions.stjohnkenya.org/connect/pinchecker.php?TaxpayerID=";
+const url = "https://briananikayi.com/connect/pinchecker.php?TaxpayerID=";
 
 function validateid(idNumber) {
     const formMsg = document.getElementById('formprocessing');
