@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FarmerController;
-
+use App\Http\Controllers\FarmerPaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +35,13 @@ Route::prefix('farmers')->group(function () {
     Route::get('/{id}/edit', [FarmerController::class, 'editfarmer'])->name('farmers.edit');
     Route::any('/{id}', [FarmerController::class, 'updatefarmer'])->name('farmers.update');
     Route::get('/{id}', [FarmerController::class, 'viewfarmer'])->name('farmers.show');
+
+
+    Route::get('/farmer/{farmer}/payment/form', [FarmerPaymentController::class, 'paymentregistrationform'])
+    ->name('farmer.payment.form');
+
+    Route::post('/farmer/{farmer}/payment/bank', [FarmerPaymentController::class, 'storeBankDetails'])
+    ->name('farmer.bank.store');
 
     // Route::get('{id}', [FarmerController::class, 'show'])->name('showfarmer');
     // Route::get('search', [FarmerController::class, 'search'])->name('search.farmer');
