@@ -37,11 +37,9 @@ Route::prefix('farmers')->group(function () {
     Route::get('/{id}', [FarmerController::class, 'viewfarmer'])->name('farmers.show');
 
 
-    Route::get('/farmer/{farmer}/payment/form', [FarmerPaymentController::class, 'paymentregistrationform'])
-    ->name('farmer.payment.form');
+    Route::get('/farmer/{farmer}/payment/form', [FarmerPaymentController::class, 'paymentregistrationform'])->name('farmer.payment.form');
 
-    Route::post('/farmer/{farmer}/payment/bank', [FarmerPaymentController::class, 'storeBankDetails'])
-    ->name('farmer.bank.store');
+    Route::post('/farmer/payment/bank', [FarmerPaymentController::class, 'storePaymentDetails'])->name('farmer.payment.store');
 
     // Route::get('{id}', [FarmerController::class, 'show'])->name('showfarmer');
     // Route::get('search', [FarmerController::class, 'search'])->name('search.farmer');

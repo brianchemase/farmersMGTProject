@@ -41,180 +41,107 @@
 								<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                     <div id="formprocessing" class="text-primary mt-2 mb-2 fw-semibold"></div>
                                     <div id="error" class="text-danger mt-1"></div>
-                                        <form action="{{ route('farmers.store') }}" method="POST" enctype="multipart/form-data">
+                                       <form action="{{ route('farmer.payment.store') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-block">
                                                 <div class="form-block-header">
-                                                    <h4>Farmer Registration</h4>
+                                                    <h4>Farmer Payment Details Registration</h4>
                                                 </div>
 
                                                 <div class="form-block-body">
+
+                                                    {{-- EXISTING PERSONAL DETAILS FIELDS REMAIN AS THEY ARE --}}
+                                                    {{-- .................................................... --}}
+                                                    {{-- (Your current fields remain unchanged up to the end of them) --}}
+
+                                                    <hr>
+                                                    <h4>Payment Details</h4>
+
                                                     <div class="row gutters">
-                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-
-                                                            <div class="row gutters">
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="id_number" class="col-form-label">Farmer National ID</label>
-                                                                        <input type="text" 
-                                                                            name="id_number" 
-                                                                            class="form-control @error('id_number') is-invalid @enderror" 
-                                                                            id="id_number" 
-                                                                            placeholder="National ID" 
-                                                                            value="{{ old('id_number') }}" 
-                                                                            required>
-                                                                        @error('id_number')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="name" class="col-form-label">Farmer Name</label>
-                                                                        <input type="text" 
-                                                                            name="name" 
-                                                                            class="form-control @error('name') is-invalid @enderror" 
-                                                                            id="farmername" 
-                                                                            placeholder="Full Name" 
-                                                                            value="{{ old('name') }}" 
-                                                                            required>
-                                                                        @error('name')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
-                                                                </div>
+                                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                            <div class="form-group">
+                                                                <label for="payment_type" class="col-form-label">Payment Method</label>
+                                                                <select name="payment_type" id="payment_type" class="form-control" required>
+                                                                    <option value="">-- Select Payment Method --</option>
+                                                                    <option value="MPESA">M-PESA</option>
+                                                                    <option value="BANK">Bank</option>
+                                                                    <option value="BOTH">Both</option>
+                                                                </select>
                                                             </div>
-
-                                                            <div class="row gutters">
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="gender" class="col-form-label">Gender</label>
-                                                                        <select name="gender" id="gender" class="form-control @error('gender') is-invalid @enderror" required>
-                                                                            <option value="">-- Select Gender --</option>
-                                                                            <option value="Male" {{ old('gender') == 'Male' ? 'selected' : '' }}>Male</option>
-                                                                            <option value="Female" {{ old('gender') == 'Female' ? 'selected' : '' }}>Female</option>
-                                                                        </select>
-                                                                        @error('gender')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="location" class="col-form-label">Location</label>
-                                                                        <input type="text" 
-                                                                            name="location" 
-                                                                            class="form-control @error('location') is-invalid @enderror" 
-                                                                            id="location" 
-                                                                            placeholder="Location" 
-                                                                            value="{{ old('location') }}" 
-                                                                            required>
-                                                                        @error('location')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
                                                         </div>
+                                                    </div>
+                                                    <input type="hidden" name="farmer_id" value="{{ $farmer->id }}">
 
-                                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-
-                                                            <div class="row gutters">
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="dateofbirth" class="col-form-label">Date of Birth</label>
-                                                                        <input type="date" 
-                                                                            name="dateofbirth" 
-                                                                            class="form-control @error('dateofbirth') is-invalid @enderror" 
-                                                                            id="dateofbirth" 
-                                                                            value="{{ old('dateofbirth') }}" 
-                                                                            required>
-                                                                        @error('dateofbirth')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
+                                                    {{-- MPESA SECTION --}}
+                                                    <div id="mpesa_section" style="display:none;">
+                                                        <h6>M-PESA Details</h6>
+                                                        <div class="row gutters">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label for="mpesa_phone" class="col-form-label">M-PESA Phone</label>
+                                                                    <input type="text" name="mpesa_phone" class="form-control" placeholder="07XXXXXXXX">
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="county" class="col-form-label">County of Farming</label>
-                                                                        <select name="county" id="county" class="form-control @error('county') is-invalid @enderror" required>
-                                                                            <option value="">-- Select County --</option>
-                                                                            @foreach($counties as $code => $name)
-                                                                                <option value="{{ $code }} - {{ $name }}" 
-                                                                                    {{ old('county') == "$code - $name" ? 'selected' : '' }}>
-                                                                                    {{ $code }} - {{ $name }}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
-                                                                        @error('county')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
+                                                    <hr>
+
+                                                    {{-- BANK SECTION --}}
+                                                    <div id="bank_section" style="display:none;">
+                                                        <h6>Bank Details</h6>
+                                                        <div class="row gutters">
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label for="bank_name" class="col-form-label">Bank Name</label>
+                                                                    <input type="text" name="bank_name" class="form-control" placeholder="Bank Name">
                                                                 </div>
                                                             </div>
 
-                                                            <div class="row gutters">
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="primary_phone" class="col-form-label">Primary Phone Number</label>
-                                                                        <input type="text" 
-                                                                            name="primary_phone" 
-                                                                            class="form-control @error('primary_phone') is-invalid @enderror" 
-                                                                            id="primary_phone" 
-                                                                            placeholder="07XXXXXXXX" 
-                                                                            value="{{ old('primary_phone') }}" 
-                                                                            required>
-                                                                        @error('primary_phone')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="secondary_phone" class="col-form-label">Secondary Phone Number</label>
-                                                                        <input type="text" 
-                                                                            name="secondary_phone" 
-                                                                            class="form-control @error('secondary_phone') is-invalid @enderror" 
-                                                                            id="secondary_phone" 
-                                                                            placeholder="07XXXXXXXX" 
-                                                                            value="{{ old('secondary_phone') }}">
-                                                                        @error('secondary_phone')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label for="bank_branch" class="col-form-label">Bank Branch</label>
+                                                                    <input type="text" name="bank_branch" class="form-control" placeholder="Branch">
                                                                 </div>
                                                             </div>
 
-                                                            <div class="row gutters">
-                                                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                                                    <div class="form-group">
-                                                                        <label for="magshot" class="col-form-label">Farmer Magshot</label>
-                                                                        <input type="file" name="magshot" class="form-control @error('magshot') is-invalid @enderror" id="magshot">
-                                                                        @error('magshot')
-                                                                            <div class="text-danger small">{{ $message }}</div>
-                                                                        @enderror
-                                                                    </div>
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label for="account_name" class="col-form-label">Account Name</label>
+                                                                    <input type="text" name="account_name" class="form-control" placeholder="Account Name">
                                                                 </div>
                                                             </div>
 
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                                                <div class="form-group">
+                                                                    <label for="account_number" class="col-form-label">Account Number</label>
+                                                                    <input type="text" name="account_number" class="form-control" placeholder="Account Number">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div class="row gutters mt-3">
                                                         <div class="col-xl-12">
                                                             <button type="submit" class="btn btn-primary float-right">
-                                                                <span class="icon-user-add"></span> Register Farmer
+                                                                <span class="icon-user-add"></span> Register Farmer Payment Details
                                                             </button>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </form>
+
+                                        {{-- TOGGLE PAYMENT SECTIONS --}}
+                                        <script>
+                                            document.getElementById('payment_type').addEventListener('change', function() {
+                                                const type = this.value;
+                                                document.getElementById('mpesa_section').style.display = (type === 'MPESA' || type === 'BOTH') ? 'block' : 'none';
+                                                document.getElementById('bank_section').style.display = (type === 'BANK' || type === 'BOTH') ? 'block' : 'none';
+                                            });
+                                        </script>
+
 
                                  
 								</div>

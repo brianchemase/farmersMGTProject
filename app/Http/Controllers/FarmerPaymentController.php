@@ -11,6 +11,14 @@ class FarmerPaymentController extends Controller
     // Show bank registration form
     public function paymentregistrationform($id)
     {
+
+         // 1. Check if payment already exists for this farmer
+            $existing = DB::table('farmer_payments')->where('farmer_id', $id)->first();
+
+            if ($existing) {
+                return redirect()->back()->with('error', 'Payment details for this farmer have already been registered.');
+            }
+
         // Get farmer info
         $farmer = DB::table('farmers')->where('id', $id)->first();
 
@@ -18,10 +26,15 @@ class FarmerPaymentController extends Controller
             return redirect()->back()->with('error', 'Farmer not found!');
         }
 
-        return view('dashboard.payment.paymentform', compact('farmer'));
+
+         $data = [
+            'farmer' => $farmer,
+        ];
+
+        return view('dashboard.payment.paymentform')->with($data);
     }
 
-    public function storePaymentDetails(Request $request, $id)
+    public function storePaymentDetails(Request $request)
     {
         $request->validate([
             'payment_type' => 'required|in:MPESA,BANK,BOTH',
@@ -43,8 +56,14 @@ class FarmerPaymentController extends Controller
             ]);
         }
 
+        $id = $request->input('farmer_id');
+
+        // Get farmer ID number automatically
+        $farmer = DB::table('farmers')->where('id', $id)->first();
+
         DB::table('farmer_payments')->insert([
             'farmer_id'      => $id,
+            'farmer_id_number' => $farmer->id_number, // auto fetched
             'payment_type'   => $request->payment_type,
             'mpesa_phone'    => $request->mpesa_phone,
             'bank_name'      => $request->bank_name,

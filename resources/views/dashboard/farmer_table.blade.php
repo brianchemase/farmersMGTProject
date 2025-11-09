@@ -53,6 +53,22 @@
 						</div>
 						<!-- Row end -->
 
+						@if(session('error'))
+							<div class="alert alert-danger">
+								{{ session('error') }}
+							</div>
+						@endif
+						<script>
+							@if(session('error'))
+								Swal.fire({
+									icon: 'error',
+									title: 'Error',
+									text: '{{ session('error') }}',
+									confirmButtonColor: '#d33'
+								});
+							@endif
+						</script>
+
 
 						<!-- Row start -->
 						<div class="row gutters">
@@ -104,6 +120,8 @@
 																<div class="dropdown-menu" x-placement="left-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(-194px, 0px, 0px);">
 																	<a class="dropdown-item" href="{{ route('farmers.edit', $farmer->id) }}">Edit Farmer</a>
 																	<a class="dropdown-item" href="{{ route('farmers.show', $farmer->id) }}">View Farmer</a>
+																	<a class="dropdown-item" href="{{ route('farmer.payment.form', $farmer->id) }}">Register Payment Details
+            </a>
 																	<a class="dropdown-item" href="#">Something else here</a>																	
 																</div>
 															</div>
